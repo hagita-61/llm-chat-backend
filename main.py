@@ -39,7 +39,8 @@ async def chat_endpoint(req: ChatRequest):
     }
 
     try:
-        response = requests.post("http://127.0.0.1:8080/completion", json=payload)
+        #response = requests.post("http://127.0.0.1:8080/completion", json=payload)
+        response = requests.post("https://your-model-server.onrender.com/completion", json=payload)
         response.raise_for_status()
     except requests.RequestException as e:
         print(f"Error: {e}")
